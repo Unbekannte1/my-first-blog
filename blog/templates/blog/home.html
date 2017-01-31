@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block header %}
+    Главная
+{% endblock %}
+
+{% block content %}
+
+    {% for post in posts %}
+        <div class="row">
+            <div class="col-xs-0 col-md-4"> </div>
+            <div class="col-xs-0 col-md-8">
+                <h3><a style="color: black" href="{% url 'post' post.id %}">{{ post.title }}</a></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-0 col-md-4">
+                <img class="img-responsive center-block " style="width: 100%" src="{{ post.pic.url }}">
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <p>{{ post.get_short_text|linebreaksbr|urlize }}</p>
+                <p><a href="{% url 'post' post.id %}">... читать полностью</a></p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
