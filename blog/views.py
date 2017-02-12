@@ -37,3 +37,9 @@ def show_article(request, article_id):
 def show_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     return render(request, 'blog/post.html', {'post': post})
+
+def лаб_3(request):
+    return render(request, 'blog/лаб_3.html')
+
+def lab_4(request):
+    return render(request, 'blog/lab_4.html')

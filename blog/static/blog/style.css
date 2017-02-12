@@ -6,13 +6,15 @@ h4, h3 {
     margin-top: 50px;
 }
 
+
 body {
-    background-image: url(images/backgrounds/blue_yellow.png);
-    background-position: inherit;
+    background-image: url(images/backgrounds/b_y_grad.png);
+    background-position: top;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+   /* background-repeat: no-repeat;*/
     background-size: cover;
     color: black;
+    margin: 10px;
 }
 
 a {

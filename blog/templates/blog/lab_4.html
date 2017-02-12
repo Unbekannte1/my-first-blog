@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+    Лабораторная работа №4
+{% endblock %}
+
+
+{% block header %}
+    Лабораторная работа №4
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <p>Даны три действительных числа х1,х2,х3. Составить программу расстановки их в убывающем порядке при любом
+            исходном порядке.</p>
+        <input name="DigitalInput" title="Первое число" id="1">
+        <input name="DigitalInput" title="Второе число" id="2">
+        <input name="DigitalInput" title="Третье число" id="3">
+        <button onclick="f1()" id="1st_button">Кнопка!</button>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script language="JavaScript">
+        function f1() {
+            var numbers = [];
+            var arr = document.getElementsByName("DigitalInput");
+            //alert(arr);
+
+            arr.forEach(function (item, i, arr) {
+                var numb = parseFloat(item.value);
+                if (!isNaN(numb)) {
+                    numbers.push(numb);
+                    //alert(typeof numb);
+                }
+            });
+
+            numbers.sort(sortNumber);
+            //alert(numbers);
+            //alert(typeof numbers);
+            for (var i = 0; i < arr.length; i++) {
+                if (i < numbers.length) {
+                    arr[i].value = numbers[i];
+                }
+                else {
+                    arr[i].value = '-';
+                }
+            }
+        }
+
+        function sortNumber(a, b) {
+            return b - a;
+        }
+    </script>
+{% endblock %}

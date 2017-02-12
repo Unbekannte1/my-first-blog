@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
-from blog.views import home, about, show_article, media, show_post, hot, contacts
+from blog.views import home, about, show_article, media, show_post, hot, contacts, лаб_3, lab_4
 
 urlpatterns = [
                   url(r'^$', home, name='home'),
@@ -25,6 +25,8 @@ urlpatterns = [
                   url(r'^post/(?P<post_id>[0-9]+)/$', show_post, name='post'),
                   url(r'^hot/', hot, name='hot'),
                   url(r'^contacts/', contacts, name='contacts'),
+                  url(r'^лаб_3/', лаб_3, name='лаб_3'),
+                  url(r'^lab_4/', lab_4, name='lab_4'),
                   # url(r'^media/$', media, name='media'), # {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
